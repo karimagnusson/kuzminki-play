@@ -2,7 +2,7 @@ scalaVersion := "2.13.12"
 
 name := "kuzminki-akka-play"
 
-version := "0.9.0"
+version := "0.9.1"
 
 scalacOptions ++= Seq(
   "-deprecation",
@@ -14,8 +14,7 @@ lazy val root = (project in file("."))
     name := "kuzminki-zio",
     libraryDependencies ++= Seq(
       "io.github.karimagnusson" % "kuzminki-ec" % "0.9.4",
-      "com.typesafe.play" %% "play" % "2.9.1",
-      "com.google.inject" % "guice" % "7.0.0"
+      "com.typesafe.play" %% "play" % "2.9.1"
     )
   )
 
