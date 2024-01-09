@@ -4,6 +4,9 @@
 
 # kuzminki-play
 
+#### About
+This project contains a module to use [kuzminki-ec](https://github.com/karimagnusson/kuzminki-ec) with [Play Framework](https://www.playframework.com/). It also contains integration with Play Json library. It is available for both [Pekko](https://pekko.apache.org/) and [Akka](https://akka.io/). Take a look at the [kuzminki-play-demo](https://github.com/karimagnusson/kuzminki-play-demo) for an example of usage.
+
 #### Sbt
 ```sbt
 // Pekko
@@ -12,10 +15,6 @@ libraryDependencies += "io.github.karimagnusson" % "kuzminki-pekko-play" % "0.9.
 // Akka
 libraryDependencies += "io.github.karimagnusson" % "kuzminki-akka-play" % "0.9.1"
 ```
-
-#### About
-This project contains a module to use [kuzminki-ec](https://github.com/karimagnusson/kuzminki-ec) with [Play Framework](https://www.playframework.com/). It also contains integration with Play Json library. Take a look at the [kuzminki-play-demo](https://github.com/karimagnusson/kuzminki-play-demo) for an example of usage.
-
 
 ```sbt
 play.modules.enabled += "kuzminki.pekko.play.module.KuzminkiModule"
