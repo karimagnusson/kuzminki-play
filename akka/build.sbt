@@ -11,7 +11,7 @@ scalacOptions ++= Seq(
 
 lazy val root = (project in file("."))
   .settings(
-    name := "kuzminki-zio",
+    name := "kuzminki-akka-play",
     libraryDependencies ++= Seq(
       "io.github.karimagnusson" % "kuzminki-ec" % "0.9.4",
       "com.typesafe.play" %% "play" % "2.9.1"

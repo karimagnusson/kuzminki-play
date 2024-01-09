@@ -1,1 +1,28 @@
-Kuzminki Play
+| Twitter |
+| --- |
+| [![Twitter Follow](https://img.shields.io/twitter/follow/kuzminki_lib?label=follow&style=flat&logo=twitter&color=brightgreen)](https://twitter.com/kuzminki_lib) |
+
+# kuzminki-play
+
+#### Sbt
+```sbt
+// Pekko
+libraryDependencies += "io.github.karimagnusson" % "kuzminki-pekko-play" % "0.9.1"
+
+// Akka
+libraryDependencies += "io.github.karimagnusson" % "kuzminki-akka-play" % "0.9.1"
+```
+
+#### About
+This project contains a module to use [kuzminki-ec](https://github.com/karimagnusson/kuzminki-ec) with [Play Framework](https://www.playframework.com/). It also contains integration with Play Json library. Take a look at the [kuzminki-play-demo](https://github.com/karimagnusson/kuzminki-play-demo) for an example of usage.
+
+
+```sbt
+play.modules.enabled += "kuzminki.pekko.play.module.KuzminkiModule"
+
+kuzminki = {
+  db = "<DB_NAME>"
+  user = "<USER>"
+  password = "<PASS>"
+}
+```
