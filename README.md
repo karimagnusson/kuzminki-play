@@ -59,7 +59,7 @@ class SomeController @Inject()(
 ```
 
 #### Master / slave
-Master / slave configuration provides one api where all SELECT queries will go to the slave and all others to the master.
+Master / slave configuration provides one api where all SELECT queries will go to the slave and all others to the master. If a dispatcher is defined it should be under kuzminki-split.
 ```sbt
 play.modules.enabled += "kuzminki.pekko.play.module.KuzminkiSplitProvider"
 
