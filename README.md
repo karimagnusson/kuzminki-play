@@ -29,26 +29,7 @@ kuzminki = {
 
 ### In the latest push:  
 
-#### multiple databases
-
-```sbt
-play.modules.enabled += "kuzminki.pekko.play.module.KuzminkiMultiModule"
-
-kuzminki-multi = {
-  default = {
-    db = "some_db"
-    user = "user"
-    password = "pass"
-  }
-  other = {
-    db = "other_db"
-    user = "user"
-    password = "pass"
-  }
-}
-```
-
-#### multiple databases
+#### Multiple databases
 Support fo multiple databases. Database named 'default' will not be named.
 
 ```sbt
