@@ -26,3 +26,77 @@ kuzminki = {
   password = "<PASS>"
 }
 ```
+
+### In the latest push:  
+
+#### multiple databases
+
+```sbt
+play.modules.enabled += "kuzminki.pekko.play.module.KuzminkiMultiModule"
+
+kuzminki-multi = {
+  default = {
+    db = "some_db"
+    user = "user"
+    password = "pass"
+  }
+  other = {
+    db = "other_db"
+    user = "user"
+    password = "pass"
+  }
+}
+```
+
+#### multiple databases
+Support fo multiple databases. Database named 'default' will not be named.
+
+```sbt
+play.modules.enabled += "kuzminki.pekko.play.module.KuzminkiMultiModule"
+
+kuzminki-multi = {
+  default = {
+    db = "some_db"
+    user = "user"
+    password = "pass"
+  }
+  other = {
+    db = "other_db"
+    user = "user"
+    password = "pass"
+  }
+}
+```
+
+```scala
+@Singleton
+class SomeController @Inject()(
+  val controllerComponents: ControllerComponents,
+   @Named("other") otherDb: Kuzminki
+)(implicit ec: ExecutionContext,
+           db: Kuzminki) extends BaseController {
+```
+
+#### Master / slave
+Master / slave configuration provides one api where all SELECT queries will go to the slave and all others to the master.
+```sbt
+play.modules.enabled += "kuzminki.pekko.play.module.KuzminkiSplitProvider"
+
+kuzminki-split = {
+  master = {
+    db = "master_db"
+    user = "user"
+    password = "pass"
+  }
+  slave = {
+    db = "slave_db"
+    user = "user"
+    password = "pass"
+  }
+}
+```
+
+
+
+
+
