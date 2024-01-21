@@ -10,10 +10,10 @@ This project contains a module to use [kuzminki-ec](https://github.com/karimagnu
 #### Sbt
 ```sbt
 // Pekko
-libraryDependencies += "io.github.karimagnusson" % "kuzminki-pekko-play" % "0.9.1"
+libraryDependencies += "io.github.karimagnusson" % "kuzminki-pekko-play" % "0.9.2"
 
 // Akka
-libraryDependencies += "io.github.karimagnusson" % "kuzminki-akka-play" % "0.9.1"
+libraryDependencies += "io.github.karimagnusson" % "kuzminki-akka-play" % "0.9.2"
 ```
 
 #### Configuration
@@ -26,8 +26,6 @@ kuzminki = {
   password = "<PASS>"
 }
 ```
-
-### In the latest push:  
 
 #### Multiple databases
 Support fo multiple databases. Database named 'default' will not be named.
