@@ -17,7 +17,7 @@
 package kuzminki.pekko.play.module
 
 import javax.inject._
-import akka.actor.ActorSystem
+import org.apache.pekko.actor.ActorSystem
 import play.api.Configuration
 import play.api.inject.ApplicationLifecycle
 import kuzminki.api._
@@ -47,7 +47,7 @@ class KuzminkiProvider(conf: Configuration) extends Provider[Kuzminki] {
     val ec = system.dispatchers.lookup(
       conf
         .getOptional[String]("dispatcher")
-        .getOrElse("akka.actor.default-blocking-io-dispatcher")
+        .getOrElse("pekko.actor.default-blocking-io-dispatcher")
     )
 
     val db = Kuzminki.create(dbConf, ec)
@@ -74,10 +74,10 @@ class KuzminkiSplitProvider(masterConf: Configuration,
 
   lazy val get: Kuzminki = {
 
-    val db = new SplitApi(
+    val db = Kuzminki.createSplit(
       parse(masterConf),
       parse(slaveConf),
-      system.dispatchers.lookup(ecOpt.getOrElse("akka.actor.default-blocking-io-dispatcher"))
+      system.dispatchers.lookup(ecOpt.getOrElse("pekko.actor.default-blocking-io-dispatcher"))
     )
 
     lifecycle.addStopHook(() => db.close)

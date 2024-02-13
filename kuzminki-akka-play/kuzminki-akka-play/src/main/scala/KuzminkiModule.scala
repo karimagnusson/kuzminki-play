@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package kuzminki.pekko.play.module
+package kuzminki.akka.play.module
 
 import play.api.inject.Module
 import play.api.{Configuration, Environment}

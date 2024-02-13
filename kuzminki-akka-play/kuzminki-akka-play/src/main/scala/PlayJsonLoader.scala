@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package kuzminki.pekko.play.json
+package kuzminki.akka.play.json
 
 import java.util.UUID
 import java.sql.Time
@@ -29,11 +29,11 @@ object PlayJsonLoader {
   val toJsValue: Any => JsValue = {
     case v: String      => JsString(v)
     case v: Boolean     => JsBoolean(v)
-    case v: Short       => JsNumber(v)
+    case v: Short       => JsNumber(BigDecimal(v))
     case v: Int         => JsNumber(v)
     case v: Long        => JsNumber(v)
-    case v: Float       => JsNumber(v)
-    case v: Double      => JsNumber(v)
+    case v: Float       => JsNumber(BigDecimal(v))
+    case v: Double      => JsNumber(BigDecimal(v))
     case v: BigDecimal  => JsNumber(v)
     case v: Time        => Json.toJson(v)
     case v: Date        => Json.toJson(v)

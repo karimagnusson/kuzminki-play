@@ -9,11 +9,13 @@ This project contains a module to use [kuzminki-ec](https://github.com/karimagnu
 
 #### Sbt
 ```sbt
+// available for Scala 2.13 and Scala 3
+
 // Pekko
-libraryDependencies += "io.github.karimagnusson" % "kuzminki-pekko-play" % "0.9.2"
+libraryDependencies += "io.github.karimagnusson" %% "kuzminki-pekko-play" % "0.9.3"
 
 // Akka
-libraryDependencies += "io.github.karimagnusson" % "kuzminki-akka-play" % "0.9.2"
+libraryDependencies += "io.github.karimagnusson" %% "kuzminki-akka-play" % "0.9.3"
 ```
 
 #### Configuration
