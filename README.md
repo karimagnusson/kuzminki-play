@@ -55,7 +55,8 @@ class SomeController @Inject()(
   val controllerComponents: ControllerComponents,
    @Named("other") otherDb: Kuzminki
 )(implicit ec: ExecutionContext,
-           db: Kuzminki) extends BaseController {
+           db: Kuzminki) extends BaseController
+                            with PlayJson { // implicit conversions for Play Json
 ```
 
 #### Master / slave
