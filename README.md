@@ -3,17 +3,12 @@
 # kuzminki-play
 
 #### About
-This project contains a module to use [kuzminki-ec](https://github.com/karimagnusson/kuzminki-ec) with [Play Framework](https://www.playframework.com/). It also contains integration with the Play Json library. It is available for both [Pekko](https://pekko.apache.org/) and [Akka](https://akka.io/). Take a look at the [kuzminki-play-demo](https://github.com/karimagnusson/kuzminki-play-demo) for an example of usage.
+This project contains a module to use [kuzminki-ec](https://github.com/karimagnusson/kuzminki-ec) with [Play Framework](https://www.playframework.com/). It also contains integration with the Play Json library. Take a look at the [kuzminki-play-demo](https://github.com/karimagnusson/kuzminki-play-demo) for an example of usage.
 
 #### Sbt
 ```sbt
 // available for Scala 2.13 and Scala 3
-
-// Pekko
-libraryDependencies += "io.github.karimagnusson" %% "kuzminki-pekko-play" % "0.9.3"
-
-// Akka
-libraryDependencies += "io.github.karimagnusson" %% "kuzminki-akka-play" % "0.9.3"
+libraryDependencies += "io.github.karimagnusson" %% "kuzminki-play" % "0.9.5"
 ```
 
 #### Configuration
@@ -24,6 +19,10 @@ kuzminki = {
   db = "<DB_NAME>"
   user = "<USER>"
   password = "<PASS>"
+  host = "localhost"
+  port = 5432
+  maxPoolSize = 10
+  minPoolSize = 3
 }
 ```
 

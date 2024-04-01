@@ -32,7 +32,8 @@ object KuzminkiProvider {
       .withPassword(conf.get[String]("password"))
       .withHost(conf.getOptional[String]("host").getOrElse("localhost"))
       .withPort(conf.getOptional[Int]("port").getOrElse(5432))
-      .withPoolSize(conf.getOptional[Int]("poolsize").getOrElse(10))
+      .withMaxPoolSize(conf.getOptional[Int]("maxPoolSize").getOrElse(10))
+      .withMinPoolSize(conf.getOptional[Int]("minPoolSize").getOrElse(3))
   }
 }
 
