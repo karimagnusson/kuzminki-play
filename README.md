@@ -27,6 +27,14 @@ kuzminki = {
   minPoolSize = 3
 }
 ```
+```scala
+@Singleton
+class SomeController @Inject()(
+  val controllerComponents: ControllerComponents
+)(implicit ec: ExecutionContext,
+           db: Kuzminki) extends BaseController
+                            with PlayJson { // implicit conversions for Play Json
+```
 
 #### Multiple databases
 Support fo multiple databases. Database named 'default' will not be named.
@@ -54,7 +62,7 @@ class SomeController @Inject()(
   val controllerComponents: ControllerComponents,
    @Named("other") otherDb: Kuzminki
 )(implicit ec: ExecutionContext,
-           db: Kuzminki) extends BaseController
+           db: Kuzminki) extends BaseController // default database
                             with PlayJson { // implicit conversions for Play Json
 ```
 
@@ -76,7 +84,14 @@ kuzminki-split = {
   }
 }
 ```
-
+```scala
+@Singleton
+class SomeController @Inject()(
+  val controllerComponents: ControllerComponents
+)(implicit ec: ExecutionContext,
+           db: Kuzminki) extends BaseController
+                            with PlayJson { // implicit conversions for Play Json
+```
 
 
 
