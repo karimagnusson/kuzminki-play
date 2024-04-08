@@ -5,7 +5,7 @@
 #### About
 This project contains a module to use [kuzminki-ec](https://github.com/karimagnusson/kuzminki-ec) with [Play Framework](https://www.playframework.com/). It also contains integration with the Play Json library. Take a look at the [kuzminki-play-demo](https://github.com/karimagnusson/kuzminki-play-demo) for an example of usage.
 
-If you are using Akka, you can use version [0.9.3](https://github.com/karimagnusson/kuzminki-play/releases/tag/0.9.3)
+This version is for Play 3. If you are using Play 2.9 with Akka, you can use version [0.9.3](https://github.com/karimagnusson/kuzminki-play/releases/tag/0.9.3)
 
 #### Sbt
 ```sbt
